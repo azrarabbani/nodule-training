@@ -1,0 +1,195 @@
+{
+    "requestURI": "/sampleapp",
+
+    "i18n": {
+        "contentPath": "path:./locales",
+        "fallback": "en-US"
+    },
+
+    "services": {
+        "servicecore": {
+            "rejectUnauthorized": false
+        },
+        "userrelationship-paypal": {
+            "asfSchemaOverride" : true
+        }
+    },
+
+    "express": {
+        "view engine": "dust",
+        "view cache": false,
+        "views": "path:./public/templates",
+        "mountpath": "/sampleapp"
+    },
+
+    "dust": {
+        "helpers": [
+            "ppdustjs-filters-secure",
+            "dustjs-helpers",
+            {
+                "name": "dust-makara-helpers",
+                "arguments": {
+                    "autoloadTemplateContent": false
+                }
+            }
+        ]
+    },
+
+    "view engines": {
+        "dust": {
+            "module": "makara",
+            "renderer": {
+                "method": "dust",
+                "arguments": [ {
+                    "cache": true,
+                    "helpers": "config:dust.helpers"
+                } ]
+            }
+        },
+
+        "js": {
+            "module": "makara",
+            "renderer": {
+                "method": "js",
+                "arguments": [ {
+                    "cache": true,
+                    "helpers": "config:dust.helpers"
+                } ]
+            }
+        }
+    },
+
+    "middleware": {
+        "logger": {
+            "module": {
+                "name": "morgan",
+                "arguments": [
+                  "tiny"
+                ]
+            }
+        },
+
+        "static": {
+            "enabled": true,
+            "priority": 40,
+            "name": "serve-static",
+            "module": {
+                "arguments": [ "path:./.build" ]
+            }
+        },
+
+        "makara": {
+            "enabled": true,
+            "priority": 100,
+            "module": {
+                "name": "makara",
+                "arguments": [{
+                    "i18n": "config:i18n",
+                    "specialization": "config:specialization"
+                }]
+            }
+        },
+        
+        "appsec": {
+	    "enabled": true,
+	    "priority": 110,
+	    "module": {
+	        "name": "lusca",
+	        "arguments": [{
+                    "csp": {
+                        "policy": {
+                            "default-src": "'self' https://*.paypal.com https://*.paypalobjects.com https://nexus.ensighten.com 'unsafe-inline' https://*.cardinalcommerce.com",
+                            "script-src": "'self' https://*.paypal.com https://*.paypalobjects.com 'unsafe-inline' 'unsafe-eval'",
+                            "img-src": "https://*.paypalobjects.com https://secure.gravatar.com https://*.paypal.com:* *.omtrdc.net https://securepics.ebaystatic.com https://s3.amazonaws.com/campaign.manager.images.qa/image_service/ https://*.ebay.com http://i.ebayimg.qa.ebay.com/ https://s3.amazonaws.com/campaign.manager.images/image_service/ https://web-assets-prod.s3.amazonaws.com paypal.112.2O7.net https://altfarm.mediaplex.com data:",
+                            "object-src": "'self' https://*.paypal.com https://*.paypalobjects.com",
+                            "font-src": "'self' https://*.paypalobjects.com"
+                       }
+                    },
+                    "csrf": true,
+                    "xframe": "SAMEORIGIN",
+                    "xssProtection": true
+                }]
+            }
+        },
+
+
+        "encryptedcookies": {
+            "enabled": true,
+            "priority": 111,
+            "module": {
+                "name": "encryptedcookies-paypal",
+                "arguments": [{
+                    "encryptionKey": "vault:encrypted_crypt_key",
+                    "macKey": "vault:encrypted_mac_key"
+                }]
+            }
+        },
+
+        "auth": {
+            "enabled": true,
+            "priority": 113,
+            "module": {
+                "name": "auth-paypal",
+                "arguments": [{
+                    "cookieEncryptionKey": "vault:encrypted_crypt_key",
+                    "cookieMacKey": "vault:encrypted_mac_key"
+                }]
+            }
+        },
+
+        // make sure this is after auth module
+        "locale": {
+            "enabled": true,
+            "priority": 114,
+            "module": {
+                "name": "locale"
+            }
+        },
+
+        "experiementation": {
+            "priority": 115,
+            "enabled": true,
+            "module": "experimentation-paypal"
+        },
+
+        "router": {
+            "module": {
+                "arguments": [{
+                    "directory": "path:./routes"
+                }]
+            }
+        },
+
+        "fileNotFound": {
+            "enabled": true,
+            "priority": 130,
+            "module": {
+                "name": "kraken-js/middleware/404",
+                "arguments": [ "errors/404" ]
+            }
+        },
+
+        "serverError": {
+            "enabled": true,
+            "priority": 140,
+            "module": {
+                "name": "path:./lib/errorHandler"
+            }
+        }
+
+    },
+
+    "fx-example":{
+        "from":{
+            "amountCents":"10000",
+            "currencyCode":"USD"
+        },
+        "to":{
+            "currencyCode":"EUR"
+        }
+    },
+
+    "specialization": {
+    }
+
+}

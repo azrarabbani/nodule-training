@@ -1,0 +1,7 @@
+# Nodemon should ignore changes to the following:
+
+/public/*   # ignore all public resources
+/.*         # any hidden (dot) files
+*.md        # Markdown files
+*.css       # CSS files
+.build/*    # Build folder

@@ -1,0 +1,23 @@
+{
+  "plugins": {
+    "view": {
+      "module": "nemo-view",
+      "arguments": ["path:locator"]
+    },
+    "jaws": {
+      "module": "nemo-jaws",
+      "arguments": ["msmaster", "http://jaws.paypalcorp.com/v1/QIJawsServices/restservices"]
+    },
+    "screenshot": {
+      "module": "nemo-screenshot",
+      "arguments": ["path:report", ["click", "exception"]]
+    }
+
+  },
+  "driver": {
+    "browser": "firefox"
+  },
+  "data": {
+    "baseUrl": "env:BASE_URL"
+  }
+}

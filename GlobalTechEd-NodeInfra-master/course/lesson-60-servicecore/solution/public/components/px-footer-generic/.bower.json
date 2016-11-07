@@ -1,0 +1,26 @@
+{
+  "name": "px-footer-generic",
+  "version": "0.0.1",
+  "ignore": [
+    ".editorconfig",
+    ".gitignore",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json",
+    "examples"
+  ],
+  "dependencies": {
+    "px-grids": "0.0.2",
+    "px-nav-generic": "~0.0.4"
+  },
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "9558c3dee6eb43c93fd4b24d245848e4fe3de77c"
+  },
+  "_source": "git://github.paypal.com/UIE-Components/px-footer-generic",
+  "_target": "~0.0.1",
+  "_originalSource": "px-footer-generic",
+  "_direct": true
+}

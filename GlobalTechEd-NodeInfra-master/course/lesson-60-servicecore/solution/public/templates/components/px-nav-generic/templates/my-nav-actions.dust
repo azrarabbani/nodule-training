@@ -1,0 +1,12 @@
+{!
+Example dust file to pass as the "header-actions" section for the header-generic component
+
+Required markup: ul.px-nav-actions>li
+!}
+<ul class="px-nav-actions">
+	{?isLoggedIn}
+		<li>
+			<a href="{requestURI}/logout" class="btn">Logout</a>
+		</li>
+	{/isLoggedIn}
+</ul>

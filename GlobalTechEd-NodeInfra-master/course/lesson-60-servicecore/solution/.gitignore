@@ -1,0 +1,15 @@
+.idea
+.settings
+.build
+.DS_Store
+node_modules
+/logs
+/cdbs
+*.log
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db

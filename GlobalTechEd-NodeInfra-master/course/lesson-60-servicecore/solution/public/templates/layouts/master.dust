@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{context.locality.language}">
+<head>
+    <meta charset="utf-8" />
+    {>"components/UVLPageInfo/templates/pageInfo"/}
+    <link rel="shortcut icon" sizes="196x196" href="https://www.paypalobjects.com/webstatic/icon/pp196.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.paypalobjects.com/webstatic/icon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="https://www.paypalobjects.com/webstatic/icon/pp32.png" />
+    <title>{+title}{@pre type="content" key="template.title"/}{/title}</title>
+    <link rel="stylesheet" href="{context.links.cssBaseUrl}/app.css" />
+</head>
+<body>
+        {>"components/px-nav-generic/templates/px-nav-generic"
+            px-nav-logo="components/px-nav-generic/templates/my-logo"
+            px-nav-actions="components/px-nav-generic/templates/my-nav-actions" /}
+        <div class="contents" id="contents" role="main">
+        {+body /}
+        </div>
+        {>"components/px-footer-generic/templates/px-footer-generic"
+            px-footer-content="components/px-footer-generic/templates/my-footer-content" /}
+
+    <script data-main="{context.links.jsBaseUrl}/app" src="{context.links.jsBaseUrl}/lib/require.js"></script>
+    {>"components/UVLSiteCatalyst/templates/siteCatalyst" sys=sys disableOnLoad=disableOnLoad /}
+    {>"components/UVLPageTracking/templates/pageTracking" isMobileOptimized=isMobileOptimized /}
+</body>
+</html>

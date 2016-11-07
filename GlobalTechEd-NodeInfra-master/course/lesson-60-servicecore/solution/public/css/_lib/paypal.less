@@ -1,0 +1,50 @@
+/**
+ * @fileOverview Global CSS settings/reset
+ * @name paypal.css
+ * @author dlembree, hdoan
+ * @tested IE7, IE8, IE9, FF12, Chrome18, Opera11
+ */
+
+
+nav, header, footer, section, aside, hgroup {
+	display: block;
+}
+.headline { /* only for text over 14px */
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+fieldset {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+}
+
+input,
+textarea {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.no-js body {
+	display: block !important;
+}
+.clear {
+	clear: both;
+}
+.accessAid {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important; 
+  width: 1px !important; 
+  overflow: hidden;
+}
+.hide {
+	display: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	margin: 0;
+	/* display: none; <- Crashes Chrome on hover */
+	-webkit-appearance: none;
+}

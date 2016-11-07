@@ -1,0 +1,273 @@
+{
+  "body": {
+    "_type": "ASF::Service::ResponseVO",
+    "service": "UserRead",
+    "operation": "load_user_data",
+    "requested_version": "",
+    "actual_version": "2.0-124.0-17118751",
+    "server_ip": "10.57.99.21",
+    "server_info": "stage2msmaster_userlifecycleserv:load_user_data*CalThreadId=0*TopLevelTxnStartTime=14ee5b94314*Host=stage2cs2460",
+    "result": {
+      "_type": "User::LoadUserDataResponse",
+      "success": true,
+      "account": [
+        {
+          "_type": "User::AccountVO",
+          "account_number": "1754370741915445701",
+          "encrypted_account_number": "5RN3NUZF6S578",
+          "type": "BUSINESS",
+          "time_created": "1205260165",
+          "time_closed": "0",
+          "status": "OPEN",
+          "account_name": "",
+          "legal_country": "US",
+          "legal_entity": 73,
+          "tags": [
+            "VERIFIED",
+            "SubBal"
+          ]
+        }
+      ],
+      "party": [
+        {
+          "_type": "User::PartyVO",
+          "id": "1754370741915445701",
+          "type": "PERSON",
+          "preferred_language": "en_US",
+          "citizenship": "US",
+          "timezone": "America/Los_Angeles",
+          "tags": [
+            "HTML_EML",
+            "OFAC_TRY",
+            "SpamNews",
+            "SpamSrvy",
+            "SpamDev"
+          ]
+        }
+      ],
+      "name": [
+        {
+          "_type": "User::UserNameVO",
+          "id": "4170",
+          "party_id": "1754370741915445701",
+          "is_active": true,
+          "is_primary": true,
+          "salutation": "",
+          "first_name": "Patrick",
+          "middle_name": "",
+          "last_name": "Perez",
+          "suffix": "",
+          "alternate_full_name": "",
+          "user_full_name": "Patrick Perez",
+          "user_full_name_extended": "Patrick Perez",
+          "confirmation_status": "NONE",
+          "confirmation_authority": "NONE",
+          "tags": [],
+          "orthography": "UNKNOWN"
+        }
+      ],
+      "email": [
+        {
+          "_type": "User::EmailVO",
+          "id": "229600",
+          "party_id": "1754370741915445701",
+          "email": "buttonmill@paypal.com",
+          "time_created": "1205260167",
+          "is_active": true,
+          "is_primary": true,
+          "confirmation_status": "VALID",
+          "confirmation_authority": "PRTY_REL",
+          "confirmation_status_for_relationship": "CONFIRM",
+          "confirmation_authority_for_relationship": "STANDARD",
+          "tags": []
+        }
+      ],
+      "address": [
+        {
+          "_type": "User::AddressVO",
+          "id": "271476",
+          "party_id": "1754370741915445701",
+          "type": 0,
+          "addressee_name": "",
+          "address1": "085596 Stout Drive",
+          "address2": "",
+          "city": "Pensacola",
+          "state": "FL",
+          "zip": "32591",
+          "iso_country": "US",
+          "is_high_res": false,
+          "is_canonical_format": false,
+          "is_po_box": false,
+          "is_partial_location": false,
+          "normalization_status": "UNKNOWN",
+          "is_active": true,
+          "is_primary": true,
+          "is_hidden": false,
+          "is_not_counted_against_quota": false,
+          "confirmation_status_for_relationship": "UNCONF",
+          "confirmation_authority_for_relationship": "NONE",
+          "postal_confirmation_status": "UNKNOWN",
+          "postal_confirmation_authority": "NONE",
+          "tags": [
+            "DEF_BILL",
+            "DEF_SHIP"
+          ],
+          "time_created": "1205260165",
+          "additional_address_fields": []
+        },
+        {
+          "_type": "User::AddressVO",
+          "id": "271477",
+          "party_id": "1754370741915445701",
+          "type": 0,
+          "addressee_name": "",
+          "address1": "5197210 Calista Court #9B",
+          "address2": "",
+          "city": "Ojai",
+          "state": "CA",
+          "zip": "93023",
+          "iso_country": "US",
+          "is_high_res": false,
+          "is_canonical_format": false,
+          "is_po_box": false,
+          "is_partial_location": false,
+          "normalization_status": "UNKNOWN",
+          "is_active": true,
+          "is_primary": false,
+          "is_hidden": false,
+          "is_not_counted_against_quota": false,
+          "confirmation_status_for_relationship": "UNCONF",
+          "confirmation_authority_for_relationship": "NONE",
+          "postal_confirmation_status": "UNKNOWN",
+          "postal_confirmation_authority": "NONE",
+          "tags": [],
+          "time_created": "1205260184",
+          "additional_address_fields": []
+        }
+      ],
+      "phone": [
+        {
+          "_type": "User::PhoneVO",
+          "id": "553117",
+          "party_id": "1754370741915445701",
+          "type": "2",
+          "country_code": "1",
+          "phone_number": "2139498949",
+          "user_entered_phone_number": "213-949-8949",
+          "phone_string": "213-949-8949",
+          "is_active": true,
+          "is_primary": true,
+          "tags": [
+            "WORK",
+            "DEFAULT"
+          ],
+          "confirmation_status": "NONE",
+          "confirmation_authority": "NONE",
+          "confirmation_status_for_relationship": "NONE",
+          "confirmation_authority_for_relationship": "NONE",
+          "time_created": "1205260175",
+          "time_removed": "0"
+        },
+        {
+          "_type": "User::PhoneVO",
+          "id": "553118",
+          "party_id": "1754370741915445701",
+          "type": "1",
+          "country_code": "1",
+          "phone_number": "8137002425",
+          "user_entered_phone_number": "813-700-2425",
+          "phone_string": "813-700-2425",
+          "is_active": true,
+          "is_primary": true,
+          "tags": [
+            "HOME",
+            "DEFAULT"
+          ],
+          "confirmation_status": "NONE",
+          "confirmation_authority": "NONE",
+          "confirmation_status_for_relationship": "NONE",
+          "confirmation_authority_for_relationship": "NONE",
+          "time_created": "1205260177",
+          "time_removed": "0"
+        },
+        {
+          "_type": "User::PhoneVO",
+          "id": "553119",
+          "party_id": "1754370741915445701",
+          "type": "10",
+          "country_code": "1",
+          "phone_number": "5617107033",
+          "user_entered_phone_number": "561-710-7033",
+          "phone_string": "561-710-7033",
+          "is_active": true,
+          "is_primary": true,
+          "tags": [
+            "MOBILE",
+            "DEFAULT"
+          ],
+          "confirmation_status": "NONE",
+          "confirmation_authority": "NONE",
+          "confirmation_status_for_relationship": "NONE",
+          "confirmation_authority_for_relationship": "NONE",
+          "time_created": "1205260177",
+          "time_removed": "0"
+        },
+        {
+          "_type": "User::PhoneVO",
+          "id": "553120",
+          "party_id": "1754370741915445701",
+          "type": "7",
+          "country_code": "1",
+          "phone_number": "4082082488",
+          "user_entered_phone_number": "408-208-2488",
+          "phone_string": "408-208-2488",
+          "is_active": true,
+          "is_primary": true,
+          "tags": [
+            "CUST_SRV",
+            "DEFAULT"
+          ],
+          "confirmation_status": "NONE",
+          "confirmation_authority": "NONE",
+          "confirmation_status_for_relationship": "NONE",
+          "confirmation_authority_for_relationship": "NONE",
+          "time_created": "1205260187",
+          "time_removed": "0"
+        }
+      ],
+      "security_questions": [
+        {
+          "_type": "User::SecurityQuestionsVO",
+          "party_id": "1754370741915445701",
+          "question1": "City of birth",
+          "validation1": 4,
+          "question2": "Last 4 digits of social security number",
+          "validation2": 1,
+          "time_last_changed": "0"
+        }
+      ],
+      "acct_acct_rel": [
+        {
+          "_type": "User::AccountToAccountRelationshipVO",
+          "id": "1211",
+          "subject_account": "1219532579568336752",
+          "acting_account": "1754370741915445701",
+          "type": 66,
+          "status": 65,
+          "privileges": [
+            "Express Checkout",
+            "Recurring Payment",
+            "Extended Pro Processing",
+            "Exception Processing",
+            "Mass Pay",
+            "Encrypted Website Payments",
+            "Share Billing Agreement",
+            "Withdraw Funds",
+            "OpenID Grant Minimum Read Attributes",
+            "OpenID Grant Advanced Read Attributes"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,3 @@
+<div id="profile">
+<h2>Welcome back, <span id="user">{data.name}</span></h2>
+</div>

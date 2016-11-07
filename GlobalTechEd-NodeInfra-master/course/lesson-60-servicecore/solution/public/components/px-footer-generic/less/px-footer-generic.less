@@ -1,0 +1,53 @@
+.px-footer-container {
+	// method from http://matthewjamestaylor.com/blog/keeping-footers-at-the-bottom-of-the-page
+	position: fixed;
+	bottom: 0;
+	height: 69px;
+	width: 100%;
+
+	border-top: 1px solid #d4d4d4;
+	background: @gray-lightest;
+	font-weight: bold;
+
+	#gradient > .vertical(#fff, @gray-lightest);
+
+	ul.inline {
+		padding: 0;
+
+		list-style: none;
+		text-shadow: 0 1px 1px #fff;
+
+
+		&:first-child {
+			margin: 10px 0 0 0;
+		}
+		&:last-child {
+			color: #999;
+
+			li a {
+				color: #999;
+			}
+		}
+
+		li {
+			margin: 0 18px 0 0;
+			display: inline-block;
+
+			a {
+				color: @gray;
+			}
+		}
+	}
+
+	a {
+		text-shadow: 0 1px 1px #fff;
+	}
+
+	a:hover, a:focus {
+		text-shadow: none;
+	}
+
+	.copyright {
+		font-size: 12px;
+	}
+}

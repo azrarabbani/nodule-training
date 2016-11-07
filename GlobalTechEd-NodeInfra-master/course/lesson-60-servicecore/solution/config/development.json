@@ -1,0 +1,98 @@
+{
+    "topos": {
+        "host": "live.qa.paypal.com"
+    },
+
+    "services": {
+        "servicecore": {
+            "rejectUnauthorized" : false,
+            "socketTimeout": 30000
+        },
+        "userrelationship-paypal": {
+            "asfSchemaOverride" : true
+        }
+    },
+
+    "express": {
+        "view engine": "dust",
+        "view cache": false,
+        "views": "path:./public/templates"
+    },
+
+    "view engines": {
+        "dust": {
+            "module": "engine-munger",
+            "renderer": {
+                "method": "dust",
+                "arguments": [
+                    { "cache": false, "helpers": [ "ppdustjs-filters-secure", "dustjs-helpers" ] },
+                    {
+                        "views": "config:express.views",
+                        "view engine": "config:express.view engine",
+                        "i18n": "config:i18n"
+                    }
+                ]
+            }
+        }
+    },
+    "middleware": {
+
+        // Enable run-time compiling before static middleware
+
+        "devtools": {
+            "enabled": true,
+            "priority": 35,
+            "module": {
+                "name": "kraken-devtools",
+                "arguments": [
+                    "path:./public",
+                    "path:./.build",
+                    {
+                        "dust": {
+                            "module": "kraken-devtools/plugins/dustjs",
+                            "files": "/templates/**/*.js",
+                            "base": "templates",
+                            "i18n": "config:i18n"
+                        },
+                        "less": {
+                            "module": "kraken-devtools/plugins/less",
+                            "files": "/css/**/*.css"
+                        },
+                        "copier": {
+                            "module": "kraken-devtools/plugins/copier",
+                            "files": "**/*"
+                        }
+                    }
+                ]
+            }
+        },
+
+        "logger": {
+            "module": {
+                "name": "morgan",
+                "arguments": [{
+                    "format": "dev"
+                }]
+            }
+        },
+
+        // Override logger options
+        "pplogger": {
+            "module": {
+                "arguments": [{
+                    "type": "console",
+                    "format": "pretty"
+                }]
+            }
+        },
+
+        // Override the session type
+
+        "session": {
+            "module": {
+                "name": "express-session"
+            }
+        }
+
+    }
+}

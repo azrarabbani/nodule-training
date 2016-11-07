@@ -1,0 +1,26 @@
+{
+  "name": "px-buttons",
+  "version": "0.2.0",
+  "ignore": [
+    ".editorconfig",
+    ".gitignore",
+    "bower.json",
+    "Gruntfile.js",
+    "node_modules",
+    "package.json",
+    "examples"
+  ],
+  "dependencies": {
+    "px-base": "~0.0.9"
+  },
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.0",
+    "commit": "0f34489646dfc98393291396831f763df587df65"
+  },
+  "_source": "git://github.paypal.com/UIE-Components/px-buttons.git",
+  "_target": "~0.2.0",
+  "_originalSource": "px-buttons",
+  "_direct": true
+}

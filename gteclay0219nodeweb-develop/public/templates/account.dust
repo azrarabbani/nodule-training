@@ -1,0 +1,40 @@
+{>"layouts/master" /}
+
+{<body}
+    {@useContent bundle="account.properties"}
+        <div class="container-fluid">
+            <p align="right">{date}</p>
+
+            <h1>{@pre type="content" key="headers.main" mode="paired" type="content"/}</h1><br/>
+
+            <h2>{@pre type="content" key="activity.balance" mode="paired" type="content"/}</h2>
+            <p>{@pre type="content" key="ffx.advertisement" mode="paired" type="content"/}</p>
+            <hr>
+            <h3>{@pre type="content" key="activity.title" mode="paired" type="content"/}</h3><br/>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>{@pre type="content" key="activity.headers.date" mode="paired" type="content"/}</th>
+                    <th>{@pre type="content" key="activity.headers.type" mode="paired" type="content"/}</th>
+                    <th>{@pre type="content" key="activity.headers.name" mode="paired" type="content"/}</th>
+                    <th>{@pre type="content" key="activity.headers.status" mode="paired" type="content"/}</th>
+                    <th>{@pre type="content" key="activity.headers.fee" mode="paired" type="content"/}</th>
+                    <th>{@pre type="content" key="activity.headers.gross" mode="paired" type="content"/}</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {#activity}
+                        <tr>
+                            <td class="text-right">{date}</td>
+                            <td>{type}</td>
+                            <td>{name}</td>
+                            <td>{status}</td>
+                            <td class="text-right">{fee}</td>
+                            <td class="text-right">{gross}</td>
+                        </tr>
+                    {/activity}
+                </tbody>
+            </table>
+        </div>
+    {/useContent}
+{/body}

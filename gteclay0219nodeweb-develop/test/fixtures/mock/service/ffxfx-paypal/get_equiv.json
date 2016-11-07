@@ -1,0 +1,12 @@
+{
+  "body": {
+    "result": {
+      "_type": "ffxFX::GetEquivResponse",
+      "amount_out": {
+        "code": "EUR",
+        "amount": "6413"
+      },
+      "retval": 0
+    }
+  }
+}

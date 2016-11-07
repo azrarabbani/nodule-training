@@ -1,0 +1,69 @@
+@import "buttons.less";
+
+.btn {
+	font-weight: bold;
+
+	-mox-box-sizing: border-box;
+	box-sizing: border-box;
+
+	-webkit-font-smoothing: antialiased;
+}
+
+.btn-primary {
+	text-shadow: 0 -1px #00629c;
+	border-color: #0079c1 #00588b #004b77;
+
+	background: -webkit-linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+	background: -moz-linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+	background: -o-linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+	background: linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+
+	-webkit-box-shadow: 0 1px #4dbeff inset;
+	box-shadow: 0 1px #4dbeff inset;
+
+	&:hover,
+	&:focus {
+		text-shadow: 0 -1px #004c77;
+		border-color: #00629b #004872 #003b5d;
+
+		background: -webkit-linear-gradient(bottom, #005282 0%, #005282 20%, #0083cf 100%);
+		background: -moz-linear-gradient(bottom, #005282 0%, #005282 20%, #0083cf 100%);
+		background: -o-linear-gradient(bottom, #005282 0%, #005282 20%, #0083cf 100%);
+		background: linear-gradient(bottom, #005282 0%, #005282 20%, #0083cf 100%);
+
+		-webkit-box-shadow: 0 1px #1794dc inset;
+		box-shadow: 0 1px #1794dc inset;
+	}
+}
+
+.btn-default {
+	text-shadow: 0 1px #e0e0e0;
+	border-color: #cbcbcb #b2b2b2 #8b8b8b;
+
+	background: -webkit-linear-gradient(bottom, #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);
+	background: -moz-linear-gradient(bottom, #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);
+	background: -o-linear-gradient(bottom, #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);
+	background: linear-gradient(bottom, #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);
+
+	-webkit-box-shadow: 0 1px #ececec inset;
+	box-shadow: 0 1px #ececec inset;
+
+	&:hover,
+	&:focus {
+		border-color: #cbcbcb #b2b2b2 #8d8d8d;
+
+		background: -webkit-linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);
+		background: -moz-linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);
+		background: -o-linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);
+		background: linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);
+
+		-webkit-box-shadow: 0 1px #ebe9ec inset;
+		box-shadow: 0 1px #ebe9ec inset;
+	}
+}
+
+.btn-link {
+	padding: 0;
+
+	vertical-align: baseline;
+}

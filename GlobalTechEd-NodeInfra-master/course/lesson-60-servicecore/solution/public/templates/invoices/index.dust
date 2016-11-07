@@ -1,0 +1,47 @@
+{>"layouts/master" /}
+
+{<body}
+    <div class="container-fluid">
+
+        <h2>Invoices</h2>
+
+        <p>
+            <a href="{requestURI}/invoices/create">Create new invoice</a>
+        </p>
+
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Invoice No.</th>
+                <th>Status</th>
+                <th>Invoice Date</th>
+                <th>Amount</th>
+                <th>Notes</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                {#invoices}
+                    <tr>
+                        <td>{number}</td>
+                        <td>{status}</td>
+                        <td>{invoice_date}</td>
+                        <td>{total_amount.currency} {total_amount.value}</td>
+                        <td>{note}</td>
+                        <td><a href="{requestURI}/invoices/delete/{id}">Delete</a></td>
+                    </tr>
+                {/invoices}
+            </tbody>
+        </table>
+
+        {links.showing}
+        <p>
+        <a {?links.less}href={links.first}{:else}class="disabled"{/links.less}>First</a> |{~s}
+        <a {?links.less}href={links.prev}{:else}class="disabled"{/links.less}>Prev</a> |{~s}
+        <a {?links.more}href={links.next}{:else}class="disabled"{/links.more}>Next</a> |{~s}
+        <a {?links.more}href={links.last}{:else}class="disabled"{/links.more}>Last</a>
+        </p>
+    </div>
+
+
+{/body}

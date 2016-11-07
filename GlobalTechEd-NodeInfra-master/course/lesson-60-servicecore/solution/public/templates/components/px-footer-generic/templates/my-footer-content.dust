@@ -1,0 +1,41 @@
+<ul class="inline">
+	<li>
+		<a href="/webapps/helpcenter/helphub/home/" class="scTrack:help_link" target="_blank">Help</a>
+	</li>
+
+	<li>
+		<a href="#contact" target="_blank">
+			 Contact
+		</a>
+	</li>
+	<li>
+		<a href="/webapps/helpcenter/helphub/home/" class="scTrack:contact_us_link" target="_blank">Contact</a>
+	</li>
+	<li>
+		<a href="/webapps/mpp/paypal-safety-and-security" class="scTrack:security_link" target="_blank">Security</a>
+	</li>
+</ul>
+
+<ul class="inline">
+	<li class="copyright hidden-phone">
+		©1999-2014 PayPal, Inc. All rights reserved.
+	</li>
+
+	<li>
+		<a href="https://cms.paypal.com/cgi-bin/marketingweb?cmd=_render-content&amp;fli=true&amp;content_ID=ua/Privacy_full&amp;locale.x=en-US" target="_blank">
+			Privacy
+		</a>
+	</li>
+
+	<li>
+		<a href="/webapps/mpp/ua/legalhub-full?country.x=US&amp;locale.x=en_US" name="legal" target="_blank">
+			Legal
+		</a>
+	</li>
+
+	<li>
+		<a href="https://cms.paypal.com/cgi-bin/marketingweb?cmd=_render-content&amp;fli=true&amp;content_ID=ua/upcoming_policies_full&amp;locale.x=en_US" name="policyUpdates" target="_blank">
+			Policy updates
+		</a>
+	</li>
+</ul>

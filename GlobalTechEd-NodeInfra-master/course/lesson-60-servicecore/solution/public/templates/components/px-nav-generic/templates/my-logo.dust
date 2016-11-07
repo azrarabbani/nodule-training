@@ -1,0 +1,5 @@
+<div class="px-nav-logo">
+	<a href="{requestURI}">
+		<img src="https://www.paypalobjects.com/webstatic/logo/logo_paypal_106x27.png" alt="PayPal" />
+	</a>
+</div>

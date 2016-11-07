@@ -1,0 +1,116 @@
+{!
+    Template: inc/footer
+    @param  pageName    The name of the page to pass to OpinionLab
+!}
+
+{! Adapted URLs !}
+{<helpUrl}
+    {@select key="{context.locality.country}"}
+        {@eq value="DE"}
+            {@link href="/cgi-bin/webscr?cmd=_help" /}
+        {/eq}
+        {@default}
+            {@link href="/webapps/helpcenter/helphub/home/" /}
+        {/default}
+    {/select}
+{/helpUrl}
+
+{<contactUrl}
+    {@select key="{context.locality.country}"}
+        {@eq value="DE"}
+            {@link href="/cgi-bin/webscr?cmd=_help&amp;t=escalateTab" /}
+        {/eq}
+        {@default}
+            {@link href="/webapps/helpcenter/helphub/home/" /}
+        {/default}
+    {/select}
+{/contactUrl}
+
+{<securityUrl}
+    {@select key="{context.locality.country}"}
+        {@eq value="DE"}
+            {@link href="/webapps/mpp/sicherheit" /}
+        {/eq}
+        {@default}
+            {@link href="/webapps/mpp/paypal-safety-and-security" /}
+        {/default}
+    {/select}
+{/securityUrl}
+
+{<privacyUrl}
+    {@select key="{context.locality.country}"}
+        {@eq value="DE"}
+            {@link href="/cgi-bin/webscr?cmd=p/gen/ua/policy_privacy-outside" /}
+        {/eq}
+        {@default}
+            https://cms.paypal.com/cgi-bin/marketingweb?cmd=_render-content&amp;fli=true&amp;content_ID=ua/Privacy_full&amp;locale.x={language}-{country}
+        {/default}
+    {/select}
+{/privacyUrl}
+
+{<legalUrl}
+    {! is a US-only link for now !}
+    {@link href="/webapps/mpp/ua/legalhub-full?country.x={country}&amp;locale.x={language}_{country}" /}
+{/legalUrl}
+
+{#context.locality}
+<div id="footer" class="navbar footer">
+    <div class="navbar-inner">
+        <ul class="inline">
+            <li>
+                {! "Help" !}
+                <a href="{+helpUrl/}" class="scTrack:help_link" target="_blank">
+                    {@pre type="content" key="footer.linkHelp"/}
+                </a>
+            </li>
+            <li>
+                {! "Contact" !}
+                <a href="{+contactUrl/}" class="scTrack:contact_us_link" target="_blank">
+                    {@pre type="content" key="footer.linkContact"/}
+                </a>
+            </li>
+            <li>
+                {! "Security" !}
+                <a href="{+securityUrl/}" class="scTrack:security_link" target="_blank">
+                    {@pre type="content" key="footer.linkSecurity"/}
+                </a>
+            </li>
+        </ul>
+        <ul class="inline">
+            <li class="copyright hidden-phone">
+                {@pre type="content" key="footer.copyright"/}{~s}
+                {@pre type="content" key="footer.copyrightText"/}
+            </li>
+            <li>
+                {! "Imprint"(DE) !}
+                {@eq key="{country}" value="DE"}
+                    <a href='{@link href="/cgi-bin/webscr?cmd=xpt/Marketing/general/Imprint-outside" /}' name="imprint" target="_blank">
+                        {@pre type="content" key="footer.linkImprint"/}
+                    </a>
+                {/eq}
+            </li>
+            <li>
+                {! "Privacy" !}
+                <a href="{+privacyUrl/}" class="scTrack:privacy_link" target="_blank">
+                    {@pre type="content" key="footer.linkPrivacy"/}
+                </a>
+            </li>
+            {@if cond="'{country}' === 'US'"}
+                {! two US-only links !}
+                <li>
+                    {! "Legal" !}
+                    <a href="{+legalUrl/}" name="legal" target="_blank">
+                        {@pre type="content" key="footer.linkLegal"/}
+                    </a>
+                </li>
+                <li>
+                    {! "Policy Updates" !}
+                    <a href="https://cms.paypal.com/cgi-bin/marketingweb?cmd=_render-content&amp;fli=true&amp;content_ID=ua/upcoming_policies_full&amp;locale.x={language}_{country}" name="policyUpdates" target="_blank">
+                        {@pre type="content" key="footer.policyUpdates"/}
+                    </a>
+                </li>
+            {/if}
+        </ul>
+    </div>
+</div>
+{/context.locality}

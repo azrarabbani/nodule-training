@@ -1,0 +1,39 @@
+{>"layouts/master" /}
+
+{<body}
+	<section class="intro">
+		<h1 class='logo'>{@pre type="content" key="intro.welcome" /}</h1>
+		<h2>{@pre type="content" key="intro.message" /}</h2>
+		<h3>{@pre type="content" key="intro.next" /}</h3>
+		<ul>
+			<li>
+				<a href="http://krakenjs.com/">KrakenJs</a>
+			</li>
+			<li>
+				<a href="http://go/nodejs">{@pre type="content" key="intro.nodejslink" /}</a>
+			</li>
+			<li>
+				<a href="http://go/nodejsanswerhub">{@pre type="content" key="intro.supportlink" /}</a>
+			</li>
+		</ul>
+	</section>
+	
+	<section class="login">
+		<h3>{@pre type="content" key="headers.login" /}</h3>
+		<form action="{requestURI}/login" method="post" class="login-form">
+			<p>
+				<label for="username" class="control-label">{@pre type="content" key="labels.username" /}</label>
+				<input class='form-control' type="text" name="username" id="username" />
+			</p>
+			
+			<p>
+				<label for="password" class="control-label">{@pre type="content" key="labels.password" /}</label>
+				<input type="password" class='form-control' name="password" id="password" />
+			</p>
+			
+			<input value='{@pre type="content" key="buttons.login" /}' type='submit' class="btn btn-primary">
+			<input type="hidden" name="type" id="type" value="0" />
+			<input type="hidden" name="_csrf" value="{_csrf}" />
+		</form>
+	</section>
+{/body}

@@ -1,0 +1,8 @@
+{
+  "driver": {
+    "browser": "phantomjs",
+    "serverCaps": {
+      "PHANTOMJS_CLI_ARGS": ["--web-security=no","--ignore-ssl-errors=yes"]
+    }
+  },
+}

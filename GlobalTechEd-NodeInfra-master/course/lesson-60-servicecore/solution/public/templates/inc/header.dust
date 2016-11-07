@@ -1,0 +1,26 @@
+{!Template: header !}
+<div class="navbar navbar-fixed-top header" id="header">
+    <div class="navbar-inner">
+
+        {! Logo and the home button !}
+        <div class="navBanner clearfix" role="banner">
+            <a href="#navMenu" class="toggleMenu visble-LeftNav pull-left">{@pre type="content" key="header.skipNavigation"/}</a>
+            <div class="brand">
+                <a href="{requestURI}">
+                    <img src="https://www.paypalobjects.com/webstatic/logo/logo_paypal_212x56.png" alt="PayPal" />
+                </a>
+            </div>
+            {! Actions on header for mobile devices !}
+            <div class="headerActions">
+                {+headerActionBlock /}
+            </div>
+        </div>
+
+
+        <ul class="globalNav">
+            {?isLoggedIn}
+                <li><a href="{requestURI}/logout">{@pre type="content" key="header.logout"/}</a></li>
+            {/isLoggedIn}
+        </ul>
+    </div>
+</div>

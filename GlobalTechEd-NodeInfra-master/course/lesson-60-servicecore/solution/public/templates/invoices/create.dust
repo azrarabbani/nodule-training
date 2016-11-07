@@ -1,0 +1,20 @@
+{>"layouts/master" /}
+
+{<body}
+    <div class="container-fluid">
+
+        <h2>Create Invoice</h2>
+
+        <form method="POST">
+            <input type="hidden" name="_csrf" value="{_csrf}" />
+
+            <p>
+                <textarea name="invoice" rows="40" cols="120">
+                    {invoice}
+                </textarea>
+            </p>
+
+            <p><input type="submit" value="Create" /></p>
+        </form>
+    </div>
+{/body}

@@ -1,0 +1,231 @@
+{
+    "requestURI": "/sampleapp",
+
+    "i18n": {
+        "contentPath": "path:./locales",
+        "fallback": "en-US"
+    },
+
+    "services": {
+        "servicecore": {
+            "rejectUnauthorized" : false,
+            "socketTimeout": 10000
+        },
+        "userrelationship-paypal": {
+            "asfSchemaOverride" : true
+        }
+    },
+
+    "express": {
+        "view engine": "js",
+        "view cache": false,
+        "views": "path:./.build/templates",
+        "mountpath": "/sampleapp"
+    },
+
+    "view engines": {
+        "js": {
+            "module": "engine-munger",
+            "renderer": {
+                "method": "js",
+                "arguments": [
+                    { "cache": true, "helpers": [ "ppdustjs-filters-secure", "dustjs-helpers" ] },
+                    {
+                        "views": "config:express.views",
+                        "view engine": "config:express.view engine",
+                        "i18n": "config:i18n"
+                    }
+                ]
+            }
+        }
+    },
+
+    "middleware": {
+        "logger": {
+            "module": {
+                "name": "morgan",
+                "arguments": [{
+                    "format": "tiny"
+                }]
+            }
+        },
+
+        "static": {
+            "enabled": true,
+            "priority": 40,
+            "name": "serve-static",
+            "module": {
+                "arguments": [ "path:./.build" ]
+            }
+        },
+
+        "cal": {
+            "enabled": true,
+            "priority": 100,
+            "module": {
+                "name": "cal/middleware"
+            }
+        },
+
+        "session": {
+            "enabled": true,
+            "priority": 100,
+            "module": {
+                "name": "connect-mayfly/middleware",
+                "arguments": [{
+                    "cryptKey": "vault:encrypted_mayflysession_crypt_key",
+                    "macKey": "vault:encrypted_mayflysession_mac_key",
+                    "key": "D9QpBNt9a3jP1J6xpQjS",
+                    "secret": "upgradedsamplenodeweb",
+                    "cookie": {
+                        "path": "/",
+                        "httpOnly": true,
+                        "maxAge": null
+                    },
+                    "proxy": null
+                }]
+            }
+        },
+
+        "expressView": {
+            "priority": 100,
+            "enabled": true,
+            "module": {
+                "name": "engine-munger/lib/expressView"
+            }
+        },
+
+        "ppcommons": {
+            "enabled": true,
+            "priority": 101,
+            "module": {
+                "name": "commons-paypal",
+                "arguments": [{
+                    "cryptKey": "vault:encrypted_rlogid_crypt_key",
+                    "macKey": "vault:encrypted_rlogid_mac_key"
+                }]
+            }
+        },
+
+        "expressMeta": {
+            "enabled": true,
+            "priority": 102,
+            "module": {
+                "name": "express-meta"
+            }
+        },
+
+        "pplogger": {
+            "enabled": true,
+            "priority": 103,
+            "module": {
+                "name": "pplogger",
+                "arguments": [{
+                    "type": "cal"
+                }]
+            }
+        },
+
+        "servicecore": {
+            "enabled": true,
+            "priority": 104,
+            "module": {
+                "name": "servicecore"
+            }
+        },
+
+        "encryptedcookies": {
+            "enabled": true,
+            "priority": 111,
+            "module": {
+                "name": "encryptedcookies-paypal",
+                "arguments": [{
+                    "encryptionKey": "vault:encrypted_crypt_key",
+                    "macKey": "vault:encrypted_mac_key"
+                }]
+            }
+        },
+
+        "securitycontext": {
+            "enabled": true,
+            "priority": 112,
+            "module": {
+                "name": "securitycontext-paypal"
+            }
+        },
+
+        "auth": {
+            "enabled": true,
+            "priority": 113,
+            "module": {
+                "name": "auth-paypal",
+                "arguments": [{
+                    "cookieEncryptionKey": "vault:encrypted_crypt_key",
+                    "cookieMacKey": "vault:encrypted_mac_key"
+                }]
+            }
+        },
+
+        "decorators": {
+            "priority": 115,
+            "parallel": {
+                "locale": {
+                    "enabled": true,
+                    "module": {
+                        "name": "locale"
+                    }
+                },
+
+                "wurfl": {
+                    "enabled": true,
+                    "module": {
+                        "name": "wurfl-paypal",
+                        "arguments": [{ 
+                            "capabilities": ["is_wireless_device", "is_tablet"] 
+                        }]
+                    }
+                },
+
+                "experiementation": {
+                    "enabled": true,
+                    "module": "experimentation-paypal"
+                },
+
+                "analytics-paypal": {
+                    "enabled": true,
+                    "module": {
+                        "name": "analytics-paypal"
+                    }
+                }
+            }
+        },
+
+        "router": {
+            "module": {
+                "arguments": [{ 
+                    "directory": "path:./routes" 
+                }]
+            }
+        },
+
+        "fileNotFound": {
+            "enabled": true,
+            "priority": 130,
+            "module": {
+                "name": "kraken-js/middleware/404",
+                "arguments": [ "errors/404" ]
+            }
+        },
+
+        "serverError": {
+            "enabled": true,
+            "priority": 140,
+            "module": {
+                "name": "kraken-js/middleware/500",
+                "arguments": [ "errors/500" ]
+            }
+        }
+
+    }
+
+}

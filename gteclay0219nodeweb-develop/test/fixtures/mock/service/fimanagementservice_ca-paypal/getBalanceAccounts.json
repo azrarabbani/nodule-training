@@ -1,0 +1,69 @@
+{
+  "body": {
+    "balance_accounts": [
+      {
+        "id": "HO-278GQR8CL9UME",
+        "currency_code": "USD",
+        "open": true,
+        "primary": true,
+        "sub_balances": [
+          {
+            "amount": {
+              "currency": "USD",
+              "value": "891495"
+            },
+            "type": "AVAILABLE"
+          },
+          {
+            "amount": {
+              "currency": "USD",
+              "value": "0"
+            },
+            "type": "PENDING_REVERSAL"
+          },
+          {
+            "amount": {
+              "currency": "USD",
+              "value": "2500"
+            },
+            "type": "GIFT_CARD"
+          },
+          {
+            "amount": {
+              "currency": "USD",
+              "value": "9680"
+            },
+            "type": "HOLD"
+          },
+          {
+            "amount": {
+              "currency": "USD",
+              "value": "53225"
+            },
+            "type": "TRANS_LEVEL_HOLD"
+          },
+          {
+            "amount": {
+              "currency": "USD",
+              "value": "956900"
+            },
+            "type": "TOTAL_BALANCE"
+          }
+        ],
+        "balance_auxiliary_data": {
+          "id_unencrypted": "HO305504"
+        }
+      }
+    ],
+    "links": [
+      {
+        "rel": "self",
+        "href": "/v1/wallet/balance-accounts?encrypted_account_number=false"
+      },
+      {
+        "rel": "unavailable_balance_accounts",
+        "href": "/v1/wallet/unavailable-balance-accounts?encrypted_account_number=false"
+      }
+    ]
+  }
+}

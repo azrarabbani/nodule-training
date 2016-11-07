@@ -1,0 +1,34 @@
+{!
+	@param	isMobileOptimized		If not empty, loads the mobile optimized version of tracking JS
+!}
+{#sys isMobile=data.isMobile}
+	{#tracking}
+		{?fpti}
+			{?fpti.jsFullUrl}
+				<script src="{fpti.jsFullUrl|s}"></script>
+			{:else}
+				{@eq key=isMobileOptimized value="true"}
+					{?isMobile}
+						<script src="{fpti.jsURL|s}/Mobile/js/pa/min/pa_mobile.js"></script>
+					{:else}
+						<script src="{fpti.jsURL|s}/pa/js/pa.js"></script>
+					{/isMobile}
+				{:else}
+					<script src="{fpti.jsURL|s}/pa/js/pa.js"></script>
+				{/eq}
+			{/fpti.jsFullUrl}
+			<script>
+				(function(){
+					if (typeof PAYPAL == 'undefined') {
+						PAYPAL = {};
+					}
+					if(typeof PAYPAL.analytics != "undefined"){
+						PAYPAL.core = PAYPAL.core || {};
+						PAYPAL.core.{fpti.name} = PAYPAL.analytics.setup({data:'{fpti.dataString|s|j}', url:'{fpti.serverURL|s|j}'});
+					}
+				}());
+			</script>
+			<noscript><img src="{fpti.serverURL|s}?nojs=1&{fpti.dataString|s}" alt="" height="1" width="1" border="0"></noscript>
+		{/fpti}
+	{/tracking}
+{/sys}

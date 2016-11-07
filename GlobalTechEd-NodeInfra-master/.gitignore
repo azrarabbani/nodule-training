@@ -1,0 +1,10 @@
+
+# these are the ignored files
+.idea
+.project
+.DS_Store
+
+node_modules/
+.build/
+.idea/
+npm-debug.log

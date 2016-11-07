@@ -1,0 +1,31 @@
+{>"layouts/master" /}
+
+{<body}
+    {@useContent bundle="index.properties"}
+        <section class="intro">
+            <h1 class='logo'>{@pre type="content" key="intro.welcome" /}</h1>
+            <h2>{@pre type="content" key="intro.message" /}</h2>
+            <h3>{@pre type="content" key="intro.next" /}</h3>
+            <ul>
+                <li>
+                    <a href="http://krakenjs.com/">KrakenJs</a>
+                </li>
+                <li>
+                    <a href="http://go/nodejs">{@pre type="content" key="intro.nodejslink" /}</a>
+                </li>
+                <li>
+                    <a href="http://go/nodejsanswerhub">{@pre type="content" key="intro.supportlink" /}</a>
+                </li>
+            </ul>
+        </section>
+        <section class="login">
+            {^isLoggedIn}
+                <h3>{@pre type="content" key="headers.login" /}</h3>
+                <a class="btn btn-primary" href='{redirectUrl}'>{@pre type="content" key="buttons.login" /}</a>
+            {:else}
+                <h3>{@pre type="content" key="headers.loggedIn" /}</h3>
+                <a class="btn btn-primary" href='{accountPage}'>{@pre type="content" key="buttons.accountPage" /}</a>
+            {/isLoggedIn}
+        </section>
+    {/useContent}
+{/body}

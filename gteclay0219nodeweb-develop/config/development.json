@@ -1,0 +1,59 @@
+{
+    "topos": {
+        "host": "msmaster.qa.paypal.com"
+    },
+
+    "services" :  {
+        "servicecore" : {
+            "connectTimeout" : 1000,
+            "socketTimeout" : 30000
+
+        } },
+
+    "middleware": {
+
+        // Enable run-time compiling before static middleware
+
+        "devtools": {
+            "enabled": true,
+            "priority": 35,
+            "module": {
+                "name": "kraken-devtools",
+                "arguments": [
+                    "path:./public",
+                    "path:./.build",
+                    {
+                        "less": {
+                            "module": "kraken-devtools/plugins/less",
+                            "files": "/css/**/*.css"
+                        },
+                        "copier": {
+                            "module": "kraken-devtools/plugins/copier",
+                            "files": "**/*"
+                        }
+                    }
+                ]
+            }
+        },
+
+        "logger": {
+            "module": {
+                "name": "morgan",
+                "arguments": [
+                  "dev"
+                ]
+            }
+        },
+
+        // Override logger options
+        "pplogger": {
+            "module": {
+                "arguments": [{
+                    "type": "console",
+                    "format": "pretty"
+                }]
+            }
+        }
+
+    }
+}
